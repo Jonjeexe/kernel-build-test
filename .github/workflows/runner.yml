@@ -7,22 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup custom prompt & tweaks
-        run: |
-          # Custom prompt
-          echo 'export PS1="\[\e[92m\]\u@Jonjeexe\[\e[0m\] $ "' >> ~/.bashrc
-
-          # Reduce lag
-          echo 'export TERM=xterm' >> ~/.bashrc
-          echo 'shopt -u checkwinsize' >> ~/.bashrc
-          echo 'unalias -a' >> ~/.bashrc
-          echo 'export HISTSIZE=100' >> ~/.bashrc
-
-          # Scroll fix → stop scroll = history recall
-          echo '"\eOA": history-search-backward' >> ~/.inputrc
-          echo '"\eOB": history-search-forward'  >> ~/.inputrc
-          echo 'set enable-bracketed-paste off'  >> ~/.inputrc
-          echo 'set show-all-if-ambiguous on'    >> ~/.inputrc
-          echo 'set completion-ignore-case on'   >> ~/.inputrc
-
+        run: echo 'export PS1="\[\e[92m\]\u@Jonjeexe \$ \[\e[97m\]-/\W \[\e[0m\]"' >> ~/.bashrc && source ~/.bashrc
+          
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
