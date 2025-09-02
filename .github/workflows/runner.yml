@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup custom prompt & tweaks
-        run: echo 'export PS1="\[\e[92m\]\u@Jonjeexe \$ \[\e[97m\]-/\W \[\e[0m\]"' >> ~/.bashrc && source ~/.bashrc
+        run: |
+             echo 'export PS1="\[\e[92m\]\u@Jonjeexe \$ \[\e[97m\]-/\W \[\e[0m\]"' >> ~/.bashrc && source ~/.bashrc
           
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
