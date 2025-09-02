@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: Setup custom prompt
          run: |
-    export PS1="\[\e[92m\]\u@Jonjeexe \$ \[\e[97m\]-/\W \[\e[0m\]"
-    bash --login
+               export PS1="\[\e[92m\]\u@Jonjeexe \$ \[\e[97m\]-/\W \[\e[0m\]"
+               bash --login
     
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
